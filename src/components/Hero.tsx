@@ -75,12 +75,12 @@ const Hero = () => {
 
         {/* Hero Image */}
         <div className="relative flex justify-center lg:justify-end animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-          <div className="relative">
-            <div className="glass-card p-8 rounded-3xl hero-float">
+          <div className="relative max-w-lg">
+            <div className="glass-card p-6 rounded-3xl hero-float">
               <img
                 src={heroImage}
-                alt="Alex Morgan - UI/UX Designer"
-                className="w-full h-auto max-w-md rounded-2xl shadow-strong"
+                alt="Rahul Berwal - Frontend Developer"
+                className="w-full h-auto max-w-sm rounded-2xl shadow-strong"
               />
             </div>
             {/* Floating Elements */}

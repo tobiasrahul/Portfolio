@@ -22,12 +22,12 @@ const Contact = () => {
         'service_jaw3jll',
         'template_m3gu198',
         {
-          name: formData.name,           // Changed to match template variable {{name}}
-          email: formData.email,         // Changed to match template variable {{email}}
+          name: formData.name,
+          email: formData.email,
           subject: formData.subject,
           message: formData.message,
         },
-        'srrT2P8aytOp63TrG' // Replace with your EmailJS public key
+        'srrT2P8aytOp63TrG'
       );
 
       toast({
@@ -100,156 +100,164 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-          {/* Contact Form */}
-          <div className="glass-card p-8 rounded-2xl opacity-0 animate-fade-in-up animate-delayed-1">
-            <h3 className="text-2xl font-semibold mb-6 text-foreground">
-              Send me a message
-            </h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-8 max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Contact Form */}
+            <div className="glass-card p-8 rounded-2xl opacity-0 animate-fade-in-up animate-delayed-1">
+              <h3 className="text-2xl font-semibold mb-6 text-foreground">
+                Send me a message
+              </h3>
+
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label htmlFor="name" className="text-sm font-medium text-foreground">
+                      Your Name
+                    </label>
+                    <Input
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="John Doe"
+                      required
+                      className="glass-card border-primary/20 focus:border-primary"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label htmlFor="email" className="text-sm font-medium text-foreground">
+                      Email Address
+                    </label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="john@example.com"
+                      required
+                      className="glass-card border-primary/20 focus:border-primary"
+                    />
+                  </div>
+                </div>
+
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-foreground">
-                    Your Name
+                  <label htmlFor="subject" className="text-sm font-medium text-foreground">
+                    Subject
                   </label>
                   <Input
-                    id="name"
-                    name="name"
-                    value={formData.name}
+                    id="subject"
+                    name="subject"
+                    value={formData.subject}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    placeholder="Project Collaboration"
                     required
                     className="glass-card border-primary/20 focus:border-primary"
                   />
                 </div>
+
                 <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-foreground">
-                    Email Address
+                  <label htmlFor="message" className="text-sm font-medium text-foreground">
+                    Message
                   </label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
+                  <Textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    placeholder="Tell me about your project..."
+                    rows={6}
                     required
-                    className="glass-card border-primary/20 focus:border-primary"
+                    className="glass-card border-primary/20 focus:border-primary resize-none"
                   />
                 </div>
+
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-gradient-primary hover:opacity-90 transition-opacity"
+                >
+                  <Send className="mr-2 h-4 w-4" />
+                  Send Message
+                </Button>
+              </form>
+            </div>
+
+            {/* Contact Information */}
+            <div className="flex flex-col justify-between gap-8 opacity-0 animate-fade-in-up animate-delayed-2">
+              {/* Contact Details */}
+              <div className="glass-card p-8 rounded-2xl">
+                <h3 className="text-2xl font-semibold mb-6 text-foreground">
+                  Get in touch
+                </h3>
+                <div className="space-y-4">
+                  {contactInfo.map((info) => (
+                    <a
+                      key={info.label}
+                      href={info.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors duration-200 group"
+                    >
+                      <div className="p-2 bg-gradient-primary rounded-lg text-white group-hover:scale-110 transition-transform">
+                        {info.icon}
+                      </div>
+                      <div>
+                        <div className="font-medium text-foreground">{info.label}</div>
+                        <div className="text-muted-foreground">{info.value}</div>
+                      </div>
+                    </a>
+                  ))}
+                </div>
               </div>
-              
-              <div className="space-y-2">
-                <label htmlFor="subject" className="text-sm font-medium text-foreground">
-                  Subject
-                </label>
-                <Input
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
-                  onChange={handleChange}
-                  placeholder="Project Collaboration"
-                  required
-                  className="glass-card border-primary/20 focus:border-primary"
-                />
+
+              {/* Social Links */}
+              <div className="glass-card p-8 rounded-2xl">
+                <h3 className="text-xl font-semibold mb-6 text-foreground">
+                  Connect with me
+                </h3>
+                <div className="grid grid-cols-2 gap-4">
+                  {socialLinks.map((social) => (
+                    <a
+                      key={social.label}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-3 p-4 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-200 group ${social.color}`}
+                    >
+                      <div className="group-hover:scale-110 transition-transform">
+                        {social.icon}
+                      </div>
+                      <span className="font-medium">{social.label}</span>
+                    </a>
+                  ))}
+                </div>
               </div>
-              
-              <div className="space-y-2">
-                <label htmlFor="message" className="text-sm font-medium text-foreground">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  placeholder="Tell me about your project..."
-                  rows={6}
-                  required
-                  className="glass-card border-primary/20 focus:border-primary resize-none"
-                />
-              </div>
-              
-              <Button 
-                type="submit" 
-                size="lg" 
-                className="w-full bg-gradient-primary hover:opacity-90 transition-opacity"
-              >
-                <Send className="mr-2 h-4 w-4" />
-                Send Message
-              </Button>
-            </form>
+            </div>
           </div>
 
-          {/* Contact Information */}
-          <div className="space-y-8 opacity-0 animate-fade-in-up animate-delayed-2">
-            {/* Contact Details */}
-            <div className="glass-card p-8 rounded-2xl">
-              <h3 className="text-2xl font-semibold mb-6 text-foreground">
-                Get in touch
-              </h3>
-              <div className="space-y-4">
-                {contactInfo.map((info) => (
-                  <a
-                    key={info.label}
-                    href={info.href}
-                    className="flex items-center gap-4 p-4 rounded-xl hover:bg-primary/5 transition-colors duration-200 group"
-                  >
-                    <div className="p-2 bg-gradient-primary rounded-lg text-white group-hover:scale-110 transition-transform">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <div className="font-medium text-foreground">{info.label}</div>
-                      <div className="text-muted-foreground">{info.value}</div>
-                    </div>
-                  </a>
-                ))}
+          {/* Availability - Full Width */}
+          <div className="glass-card p-8 rounded-2xl opacity-0 animate-fade-in-up animate-delayed-3">
+            <div className="flex justify-between items-center">
+              <div>
+                <h3 className="text-xl font-semibold mb-4 text-foreground">
+                  Current Availability
+                </h3>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                  <span className="text-foreground font-medium">Available for new projects</span>
+                </div>
+                <p className="text-muted-foreground text-sm">
+                  I'm currently accepting new freelance and full-time opportunities.
+                  Let's discuss how we can work together to bring your vision to life.
+                </p>
               </div>
-            </div>
-
-            {/* Social Links */}
-            <div className="glass-card p-8 rounded-2xl">
-              <h3 className="text-xl font-semibold mb-6 text-foreground">
-                Connect with me
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`flex items-center gap-3 p-4 rounded-xl border border-primary/20 hover:border-primary/40 transition-all duration-200 group ${social.color}`}
-                  >
-                    <div className="group-hover:scale-110 transition-transform">
-                      {social.icon}
-                    </div>
-                    <span className="font-medium">{social.label}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Availability */}
-            <div className="glass-card p-8 rounded-2xl">
-              <h3 className="text-xl font-semibold mb-4 text-foreground">
-                Current Availability
-              </h3>
-              <div className="flex items-center gap-2 mb-4">
-                <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
-                <span className="text-foreground font-medium">Available for new projects</span>
-              </div>
-              <p className="text-muted-foreground text-sm">
-                I'm currently accepting new freelance and full-time opportunities. 
-                Let's discuss how we can work together to bring your vision to life.
-              </p>
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
+}
 
 export default Contact;

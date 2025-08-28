@@ -1,10 +1,8 @@
-import { 
-  Figma, 
-  Palette, 
-  Code2, 
-  Smartphone, 
-  Globe, 
+import {
+  Code2,
   Database,
+  Figma,
+  Globe,
   Layers,
   Zap
 } from 'lucide-react';
@@ -12,43 +10,33 @@ import {
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Design Tools",
-      icon: <Palette className="h-6 w-6" />,
-      skills: [
-        { name: "Figma", level: 95, icon: <Figma className="h-4 w-4" /> },
-        { name: "Adobe XD", level: 90, icon: <Layers className="h-4 w-4" /> },
-        { name: "Sketch", level: 85, icon: <Palette className="h-4 w-4" /> },
-        { name: "Adobe Creative Suite", level: 88, icon: <Palette className="h-4 w-4" /> }
-      ]
-    },
-    {
       title: "Frontend Development",
       icon: <Code2 className="h-6 w-6" />,
       skills: [
-        { name: "React.js", level: 92, icon: <Code2 className="h-4 w-4" /> },
-        { name: "TypeScript", level: 88, icon: <Code2 className="h-4 w-4" /> },
-        { name: "JavaScript", level: 95, icon: <Code2 className="h-4 w-4" /> },
-        { name: "Tailwind CSS", level: 90, icon: <Code2 className="h-4 w-4" /> }
+        { name: "React.js", level: 85, icon: <Code2 className="h-4 w-4" /> },
+        { name: "JavaScript", level: 80, icon: <Code2 className="h-4 w-4" /> },
+        { name: "HTML/CSS", level: 85, icon: <Code2 className="h-4 w-4" /> },
+        { name: "TypeScript", level: 80, icon: <Code2 className="h-4 w-4" /> }
       ]
     },
     {
       title: "Backend & Tools",
       icon: <Database className="h-6 w-6" />,
       skills: [
-        { name: "Node.js", level: 82, icon: <Database className="h-4 w-4" /> },
-        { name: "Firebase", level: 85, icon: <Database className="h-4 w-4" /> },
-        { name: "Git & GitHub", level: 90, icon: <Globe className="h-4 w-4" /> },
-        { name: "MongoDB", level: 78, icon: <Database className="h-4 w-4" /> }
+        { name: "Node.js", level: 65, icon: <Database className="h-4 w-4" /> },
+        { name: "Express.js", level: 60, icon: <Database className="h-4 w-4" /> },
+        { name: "MongoDB", level: 60, icon: <Database className="h-4 w-4" /> },
+        { name: "Git & GitHub", level: 95, icon: <Globe className="h-4 w-4" /> }
       ]
     },
     {
-      title: "Mobile & Web",
-      icon: <Smartphone className="h-6 w-6" />,
+      title: "Development Tools",
+      icon: <Layers className="h-6 w-6" />,
       skills: [
-        { name: "Responsive Design", level: 95, icon: <Smartphone className="h-4 w-4" /> },
-        { name: "React Native", level: 80, icon: <Smartphone className="h-4 w-4" /> },
-        { name: "Progressive Web Apps", level: 85, icon: <Globe className="h-4 w-4" /> },
-        { name: "Performance Optimization", level: 88, icon: <Zap className="h-4 w-4" /> }
+        { name: "Figma", level: 70, icon: <Figma className="h-4 w-4" /> },
+        { name: "VS Code", level: 85, icon: <Code2 className="h-4 w-4" /> },
+        { name: "Chrome DevTools", level: 75, icon: <Zap className="h-4 w-4" /> },
+        { name: "Responsive Design", level: 80, icon: <Globe className="h-4 w-4" /> }
       ]
     }
   ];
@@ -62,12 +50,12 @@ const Skills = () => {
             Skills & Expertise
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive toolkit for creating exceptional digital experiences
+            My technical toolkit for web development
           </p>
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {skillCategories.map((category, categoryIndex) => (
             <div 
               key={category.title}
@@ -128,34 +116,27 @@ const Skills = () => {
           <h3 className="text-2xl font-semibold text-center mb-8 text-foreground">
             Additional Competencies
           </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div className="grid grid-cols-3 gap-6 text-center">
             <div className="space-y-2">
               <div className="w-12 h-12 bg-gradient-primary rounded-lg mx-auto flex items-center justify-center text-white">
-                <Layers className="h-6 w-6" />
-              </div>
-              <h4 className="font-medium text-foreground">UI/UX Design</h4>
-              <p className="text-sm text-muted-foreground">User Research & Testing</p>
-            </div>
-            <div className="space-y-2">
-              <div className="w-12 h-12 bg-gradient-secondary rounded-lg mx-auto flex items-center justify-center text-foreground">
                 <Code2 className="h-6 w-6" />
               </div>
               <h4 className="font-medium text-foreground">Clean Code</h4>
-              <p className="text-sm text-muted-foreground">Best Practices & Testing</p>
+              <p className="text-sm text-muted-foreground">Best Practices</p>
             </div>
             <div className="space-y-2">
               <div className="w-12 h-12 bg-gradient-primary rounded-lg mx-auto flex items-center justify-center text-white">
                 <Globe className="h-6 w-6" />
               </div>
               <h4 className="font-medium text-foreground">Web Standards</h4>
-              <p className="text-sm text-muted-foreground">Accessibility & SEO</p>
+              <p className="text-sm text-muted-foreground">Modern Development</p>
             </div>
             <div className="space-y-2">
-              <div className="w-12 h-12 bg-gradient-secondary rounded-lg mx-auto flex items-center justify-center text-foreground">
+              <div className="w-12 h-12 bg-gradient-primary rounded-lg mx-auto flex items-center justify-center text-white">
                 <Zap className="h-6 w-6" />
               </div>
-              <h4 className="font-medium text-foreground">Performance</h4>
-              <p className="text-sm text-muted-foreground">Optimization & Speed</p>
+              <h4 className="font-medium text-foreground">Problem Solving</h4>
+              <p className="text-sm text-muted-foreground">Analytical Thinking</p>
             </div>
           </div>
         </div>

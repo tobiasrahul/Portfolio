@@ -96,7 +96,7 @@ const About = () => {
               <div className="glass-card p-6 rounded-2xl">
                 <h4 className="font-semibold mb-4 text-foreground">Current Tech Stack</h4>
                 <div className="flex flex-wrap gap-2">
-                  {['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS', 'Git'].map((tech) => (
+                  {['HTML', 'CSS', 'JavaScript', 'React.js', 'Tailwind CSS', 'Git','TypeScript' ,'Figma'].map((tech) => (
                     <span key={tech} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm font-medium">
                       {tech}
                     </span>

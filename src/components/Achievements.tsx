@@ -1,43 +1,43 @@
-import { Trophy, Award, Users, Zap } from 'lucide-react';
+import { Award, Trophy, Users, Zap } from 'lucide-react';
 
 const Achievements = () => {
   const achievements = [
     {
       icon: <Trophy className="h-8 w-8 text-yellow-500" />,
       title: "Top 10 Finalist",
-      event: "HackWithChandigarh 2023",
-      description: "Developed an innovative healthcare platform that earned recognition among 500+ participants",
-      date: "2023",
+      event: "HackWithChandigarh 2024",
+      description: "Developed an innovative expense tracker managament system platform that earned recognition among 1000+ participants",
+      date: "2024",
       category: "Hackathon"
     },
     {
       icon: <Award className="h-8 w-8 text-blue-500" />,
-      title: "Best UI/UX Design",
-      event: "TechCrunch Disrupt Hackathon",
-      description: "Won the design excellence award for creating an intuitive fintech application interface",
-      date: "2023",
-      category: "Design Award"
+      title: "UI/UX and Frontend Developer",
+      event: "Girl Script Summer of Code 2024 & 2025",
+      description: "Open-Source Contribution in Girl Script Summer of Code 2024 & 2025 on Frontend enhancement and bug fixing.",
+      date: "2024 - Present",
+      category: "Open-Source Contribution"
     },
     {
       icon: <Users className="h-8 w-8 text-green-500" />,
-      title: "Team Lead",
-      event: "Google Solution Challenge",
-      description: "Led a team of 4 developers to create a sustainability-focused mobile application",
-      date: "2022",
+      title: "Event Management Volunteer",
+      event: "Event Crew Club, Chandigarh University ",
+      description: " Organized and coordinated university- level events, demonstrating leadership, teamwork, and time management.",
+      date: "2024 - Present",
       category: "Leadership"
     },
     {
       icon: <Zap className="h-8 w-8 text-purple-500" />,
-      title: "Innovation Award",
-      event: "University Tech Fest",
-      description: "Recognized for developing a groundbreaking AR-based learning platform",
-      date: "2022",
+      title: "Author & Researcher",
+      event: "TIJER Journal",
+      description: "Authored and Published a Research Paper on PCOS Model Accuracy Detection.",
+      date: "2024",
       category: "Innovation"
     }
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-accent/5 to-secondary/10">
+    <section id="achievements" className="py-20 bg-gradient-to-br from-accent/5 to-secondary/10">
       <div className="container mx-auto px-6">
         {/* Section Header */}
         <div className="text-center mb-16 opacity-0 animate-fade-in-up">

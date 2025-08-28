@@ -1,6 +1,6 @@
 import project1Image from '@/assets/project-1.png';
 import project2Image from '@/assets/project-2.png';
-import project3Image from '@/assets/project-3.jpg';
+import project3Image from '@/assets/project-3.png';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github, Globe, Monitor, Smartphone } from 'lucide-react';
 
@@ -28,12 +28,12 @@ const Projects = () => {
     },
     {
       id: 3,
-      title: "Raod Safety Index Calculator",
-      description: "Visualize road safety data through detailed heatmaps of your region. Identify high-risk areas and make informed decisions to enhance road safety with our intuitive tool.",
+      title: "Globetrotter",
+      description: "Globetrotter, a modern travel website. Using the power of HTML, CSS, and JavaScript, created a visually captivating and user-friendly experience that makes travelling exciting and effortless.",
       image: project3Image,
-      technologies: ["React", "Node.js", "MongoDB", "Socket.io", "Material-UI"],
-      liveUrl: "https://road-safety-index-calculator.vercel.app/",
-      githubUrl: "https://github.com/tobiasrahul/road-safety-index-calculator",
+      technologies: ["HTML", "CSS", "JavaScript"],
+      liveUrl: "https://globetrotter-two-chi.vercel.app/",
+      githubUrl: "https://github.com/tobiasrahul/Globetrotter",
       icon: <Globe className="h-5 w-5" />
     }
   ];
